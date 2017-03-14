@@ -18,7 +18,7 @@
         activate();
 
         function activate(){
-
+            console.log('Main');
         }
     }
 })();

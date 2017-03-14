@@ -3,9 +3,12 @@ var q = require('q');
 
 //defining schema for events table
 var eventsSchema = new mongoose.Schema({
-	  name: String,
-	  description: String,
-	  text: String
+	name: String,
+	image: String,
+	description: String,
+	dateStart: { type: Date, default: Date.now },
+	dateEnd: { type: Date, default: Date.now },
+    text: String
 });
 
 var Event = mongoose.model('events', eventsSchema);
@@ -16,12 +19,18 @@ var eventsModel = {};
 //Function to seed events data.
 eventsModel.seed = function(){
 	var events = Array();
-	events.push({name: 'Getting Started With ReactJs', description:'React.js is a JavaScript library for building user interfaces. - Just the UI: Lots of people use React as the V in MVC. Since React makes no assumptions about the rest of your technology stack, its easy to try it out on a small feature in an existing project. - Virtual DOM: React uses a virtual DOM diff implementation for ultra-high performance. It can also render on the server using Node.js — no heavy browser DOM required. - Data flow: React implements one-way reactive data flow which reduces boilerplate and is easier to reason about than traditional data binding.'});
-	events.push({name: 'Google Cardboard Assembly', description:'Google Cardboard Assembly Step by Step Instructions [HD]'});
-	events.push({name: 'How Does AngularJS Work Beginners Angular Tutorial', description: 'What you will learn in this course. How to use Angular.js to save time, create better projects and give your users a better experience. We’ll create a full SPA from scratch (client side). How to cloud-enable your SPA so that you can connect it to any kind of backend. Fully commented source code of the course project. Learn how to architecture a SPA: modules, controllers, services Learn how to add URL routes to your client-side SPA. We’ll be using Angular.js version 1.3.2. Access live examples at the end of each coding lesson. Learn how to use other great tools such as Boostrap 3, UnderscoreJS and Google Chrome’s Developer Tools!'});
-	events.push({name: 'How does Node.js work', description:'New to Node.js? Check out this video that explains "How does Node work?"'});
-	events.push({name: 'iPhone 7 Trailer 2016', description:'iPhone 7 concept trailer 2016! with Bluetooth AirPods by Beats and ChargingPad, and much more!'});
-	events.push({name: 'What is the MEAN Stack', description:'Do you know what the MEAN stack is? Watch our short intro video and get ready to kick your learning into shape with this full-stack development toolkit. Then head on over and play through our MEAN-related courses now.'});
+	events.push({name: 'Мероприятие 1', description:'Описание мероприятия 1', dateStart: "01-02-2017", dateEnd: "03-02-2017", image:'', text: 'Полный текст мероприятия 1'});
+	events.push({name: 'Мероприятие 2', description:'Описание мероприятия 2', dateStart: "02-02-2017", dateEnd: "04-02-2017", image:'', text: 'Полный текст мероприятия 2'});
+	events.push({name: 'Мероприятие 3', description: 'Описание мероприятия 3', dateStart: "03-02-2017", dateEnd: "05-02-2017", image:'', text: 'Полный текст мероприятия 3'});
+	events.push({name: 'Мероприятие 4', description:'Описание мероприятия 4', dateStart: "04-02-2017", dateEnd: "06-02-2017", image:'', text: 'Полный текст мероприятия 4'});
+	events.push({name: 'Мероприятие 5', description:'Описание мероприятия 5', dateStart: "05-02-2017", dateEnd: "07-02-2017", image:'', text: 'Полный текст мероприятия 5'});
+	events.push({name: 'Мероприятие 6', description: 'Описание мероприятия 6', dateStart: "06-02-2017", dateEnd: "08-02-2017", image:'', text: 'Полный текст мероприятия 6'});
+	events.push({name: 'Мероприятие 7', description:'Описание мероприятия 7', dateStart: "07-02-2017", dateEnd: "09-02-2017", image:'', text: 'Полный текст мероприятия 7'});
+	events.push({name: 'Мероприятие 8', description:'Описание мероприятия 8', dateStart: "08-02-2017", dateEnd: "10-02-2017", image:'', text: 'Полный текст мероприятия 8'});
+	events.push({name: 'Мероприятие 9', description: 'Описание мероприятия 9', dateStart: "09-02-2017", dateEnd: "11-02-2017", image:'', text: 'Полный текст мероприятия 9'});
+	events.push({name: 'Мероприятие 10', description:'Описание мероприятия 10', dateStart: "10-02-2017", dateEnd: "12-02-2017", image:'', text: 'Полный текст мероприятия 10'});
+	events.push({name: 'Мероприятие 11', description:'Описание мероприятия 11', dateStart: "11-02-2017", dateEnd: "13-02-2017", image:'', text: 'Полный текст мероприятия 11'});
+	events.push({name: 'Мероприятие 12', description: 'Описание мероприятия 12', dateStart: "12-02-2017", dateEnd: "14-02-2017", image:'', text: 'Полный текст мероприятия 12'});
 
 	var dataToInsert = Array();
 	for(var i = 0; i < 100; i++){
@@ -43,7 +52,7 @@ eventsModel.seed = function(){
 	
 }
 
-//function to get events listings
+//function to get events listings with sort, skip and limit
 eventsModel.get = function(skip, limit){
 	var results = q.defer();
 
@@ -56,7 +65,7 @@ eventsModel.get = function(skip, limit){
 		}
 		results.resolve(dbEvents);
 
-	}).skip(skip).limit(limit);
+	}).sort({ 'dateStart': -1 }).skip(skip).limit(limit);
 	return results.promise;
 };
 

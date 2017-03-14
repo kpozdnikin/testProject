@@ -1,0 +1,14 @@
+<div class="inner cover">
+    <h1 class="cover-heading">Главная страница.</h1>
+    <p class="lead">Новости</p>
+    <ul class="list-group black">
+        <li class="list-group-item" ng-repeat="news in vm.smallNews | orderBy:'dateCreate'">{{ news.name }}</li>
+    </ul>
+    <a ui-sref="news" class="">Все новости</a>
+    <hr>
+    <p class="lead">Мероприятия</p>
+    <ul class="list-group black">
+        <li class="list-group-item" ng-repeat="event in vm.smallEvents | orderBy:'dateStart'">{{ event.name }}</li>
+    </ul>
+    <a ui-sref="events" class="">Все мероприятия</a>
+</div>

@@ -17,9 +17,7 @@
 
         function getNews(limit, skip) {
             var url = '/api/news?limit=' + limit + '&skip=' + skip;
-            return $http.post('url')
-                .then(function (resp) {
-                    console.log(resp);
+            return $http.get(url).then(function (resp) {
                     if(resp.data.status == "success")
                         return resp.data;
                     else return false;
@@ -31,8 +29,7 @@
 
         function getEvents(limit, skip) {
             var url = '/api/events?limit=' + limit + '&skip=' + skip;
-            return $http.post('url')
-                .then(function (resp) {
+            return $http.get(url).then(function (resp) {
                     console.log(resp);
                     if(resp.data.status == "success")
                         return resp.data;

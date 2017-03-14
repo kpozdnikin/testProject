@@ -5,20 +5,34 @@
         .module('main.events')
         .controller('EventsController', EventsController);
 
-    EventsController.$inject = ['$scope'];
+    EventsController.$inject = ['$uibModal', 'events'];
 
-    function EventsController($scope) {
+    function EventsController($uibModal, events) {
 
         var vm = this;
 
         //functions
-        $scope.activate = activate;
+        vm.activate = activate;
+        vm.openItem = openItem;
         //variables
+        vm.events   = events;
 
         activate();
 
-        function activate(){
+        function activate(){}
 
+        function openItem(event){
+            $uibModal.open({
+                controller: 'ModalController',
+                controllerAs: 'vm',
+                templateUrl: '/modal/modal.html',
+                size : 'lg',
+                resolve: {
+                    item: event,
+                    type: 2
+                },
+                animation: false
+            });
         }
     }
 })();

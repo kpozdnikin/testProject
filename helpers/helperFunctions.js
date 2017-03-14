@@ -3,6 +3,12 @@ var News = require('../models/news');
 
 var helpers = {};
 
+//Function that checks if the request is authenticated or not.
+helpers.isAuthenticated = function(req, res, next){
+	next();
+}
+
+
 //Function to populate data in DB if DB is empty.
 helpers.populateDb = function(){
 	var promise = Events.get();
@@ -11,7 +17,7 @@ helpers.populateDb = function(){
 			console.log('Events table already populated.');
 		}
 		else{
-			console.log('Populating users table.');
+			console.log('Populating events table.');
 			Events.seed();
 		}
 	});

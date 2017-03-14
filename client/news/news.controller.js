@@ -5,20 +5,34 @@
         .module('main.news')
         .controller('NewsController', NewsController);
 
-    NewsController.$inject = ['$scope'];
+    NewsController.$inject = ['$uibModal', 'news'];
 
-    function NewsController($scope) {
+    function NewsController($uibModal, news) {
 
         var vm = this;
 
         //functions
-        $scope.activate = activate;
+        vm.activate = activate;
+        vm.openItem = openItem;
         //variables
+        vm.news = news;
 
         activate();
 
-        function activate(){
+        function activate(){}
 
+        function openItem(news){
+            $uibModal.open({
+                controller: 'ModalController',
+                controllerAs: 'vm',
+                templateUrl: '/modal/modal.html',
+                size : 'lg',
+                resolve: {
+                    item: news,
+                    type: 1
+                },
+                animation: false
+            });
         }
     }
 })();
