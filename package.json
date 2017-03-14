@@ -1,0 +1,43 @@
+{
+  "name": "testApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-ui-router": "^0.4.2",
+    "body-parser": "^1.15.1",
+    "bootstrap": "^3.3.7",
+    "express": "^4.13.4",
+    "gulp": "*",
+    "gulp-concat": "*",
+    "gulp-css-rebase-urls": "*",
+    "gulp-debug": "*",
+    "gulp-linker": "*",
+    "gulp-minify-css": "*",
+    "gulp-rename": "*",
+    "gulp-ruby-sass": "*",
+    "gulp-uglify": "*",
+    "istanbul": "^0.4.5",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "merge-stream": "*",
+    "mongoose": "^4.4.20",
+    "morgan": "^1.7.0",
+    "q": "^1.4.1"
+  },
+  "devDependencies": {
+    "jasmine": "^2.5.2",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-junit-reporter": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "phantomjs-prebuilt": "^2.1.13"
+  }
+}
