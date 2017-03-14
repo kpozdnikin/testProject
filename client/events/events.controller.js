@@ -5,17 +5,18 @@
         .module('main.events')
         .controller('EventsController', EventsController);
 
-    EventsController.$inject = ['$uibModal', 'events'];
+    EventsController.$inject = ['$uibModal', 'MainService', 'events'];
 
-    function EventsController($uibModal, events) {
+    function EventsController($uibModal, MainService, events) {
 
         var vm = this;
 
         //functions
-        vm.activate = activate;
-        vm.openItem = openItem;
+        vm.activate     = activate;
+        vm.openItem     = openItem;
+        vm.getMoreItems = getMoreItems;
         //variables
-        vm.events   = events;
+        vm.events       = events;
 
         activate();
 
@@ -33,6 +34,14 @@
                 },
                 animation: false
             });
+        }
+
+        function getMoreItems(){
+            MainService.getEvents(4, vm.events.length - 1).then(function (resp) {
+                if(resp && resp.data){
+                    vm.events = vm.events.concat(resp.data);
+                }
+            })
         }
     }
 })();

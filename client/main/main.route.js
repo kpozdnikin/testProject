@@ -50,7 +50,7 @@ function config($stateProvider, $urlRouterProvider) {
     //getting news from backend
     resolveNews.$inject = ['MainService'];
     function resolveNews(MainService) {
-        return MainService.getNews(40, 0).then(function (resp) {
+        return MainService.getNews(4, 0).then(function (resp) {
             return resp.data || null;
         });
     }
