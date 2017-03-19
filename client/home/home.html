@@ -2,13 +2,13 @@
     <h1 class="cover-heading">Главная страница.</h1>
     <p class="lead">Новости</p>
     <ul class="list-group black">
-        <li class="list-group-item" ng-repeat="news in vm.smallNews | orderBy:'dateCreate'">{{ news.name }}</li>
+        <li class="list-group-item" ng-repeat="news in $ctrl.smallNews | orderBy:'dateCreate'">{{ news.name }}</li>
     </ul>
-    <a ui-sref="news" class="">Все новости</a>
+    <a ui-sref="main.news" class="">Все новости</a>
     <hr>
     <p class="lead">Мероприятия</p>
     <ul class="list-group black">
-        <li class="list-group-item" ng-repeat="event in vm.smallEvents | orderBy:'dateStart'">{{ event.name }}</li>
+        <li class="list-group-item" ng-repeat="event in $ctrl.smallEvents | orderBy:'dateStart'">{{ event.name }}</li>
     </ul>
-    <a ui-sref="events" class="">Все мероприятия</a>
+    <a ui-sref="main.events" class="">Все мероприятия</a>
 </div>

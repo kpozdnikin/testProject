@@ -1,3 +1,4 @@
+/*
 'use strict';
 
 angular
@@ -75,4 +76,4 @@ function config($stateProvider, $urlRouterProvider) {
             return resp.data || null;
         });
     }
-}
+}*/

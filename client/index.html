@@ -14,46 +14,12 @@
         <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
         <link rel="stylesheet" type="text/css" href="/css/style.css"/>
         <!--STYLES END-->
+        <script type="text/javascript" src="/js/index.js"></script>
 
-        <!--SCRIPTS-->
-        <script type="text/javascript" src="/js/angular.js"></script>
-        <script type="text/javascript" src="/js/angular-ui-router.js"></script>
-        <script type="text/javascript" src="/js/ui-bootstrap-tpls.js"></script>
-        <script type="text/javascript" src="/events/events.module.js"></script>
-        <script type="text/javascript" src="/home/home.module.js"></script>
-        <script type="text/javascript" src="/main/main.module.js"></script>
-        <script type="text/javascript" src="/news/news.module.js"></script>
-        <script type="text/javascript" src="/events/events.controller.js"></script>
-        <script type="text/javascript" src="/home/home.controller.js"></script>
-        <script type="text/javascript" src="/main/main.controller.js"></script>
-        <script type="text/javascript" src="/modal/modal.controller.js"></script>
-        <script type="text/javascript" src="/news/news.controller.js"></script>
-        <script type="text/javascript" src="/directives/scroll.directive.js"></script>
-        <script type="text/javascript" src="/services/main.service.js"></script>
-        <script type="text/javascript" src="/main/main.route.js"></script>
-        <!--SCRIPTS END-->
 
         <title>Test App Portal</title>
     </head>
-    <body ng-app="main" ng-controller="MainController">
-    <div class="site-wrapper">
-        <div class="site-wrapper-inner">
-            <div class="cover-container">
-                <div class="masthead clearfix">
-                    <div class="inner">
-                        <h3 class="masthead-brand">Тестовое задание</h3>
-                        <nav>
-                            <ul class="nav masthead-nav">
-                                <li ui-sref-active="active"><a ui-sref="home">Главная страница</a></li>
-                                <li ui-sref-active="active"><a ui-sref="news">Новости</a></li>
-                                <li ui-sref-active="active"><a ui-sref="events">Мероприятия</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <ui-view></ui-view>
-            </div>
-        </div>
-    </div>
+    <body ng-app="app">
+        <ui-view></ui-view>
     </body>
 </html>

@@ -83,7 +83,7 @@ function createTplForDevelopment() {
             fileTmpl: '<link rel="stylesheet" type="text/css" href="\%s"/>',
             appRoot: 'client'
         }))
-        // Write modified files to src/main/web/
+        // Write modified files to src/app/web/
         .pipe(gulp.dest('client'))
         .pipe(debug({title: 'unicorn:'}));
 }

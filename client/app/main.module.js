@@ -1,3 +1,4 @@
+/*
 (function () {
     'use strict';
     angular.module('main', [
@@ -7,4 +8,4 @@
         'main.news',
         'main.events'
     ]);
-})();
+})();*/

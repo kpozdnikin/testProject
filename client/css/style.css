@@ -173,3 +173,6 @@ body {
     max-height: 300px;
     overflow: scroll;
 }
+.modal-header {
+    color: #333333;
+}
