@@ -12,7 +12,7 @@ export class EventsController {
 
     $onInit() {
         this.events = [];
-        this.MainService.getEvents(4, 0).then(response => this.events = response.data);
+        this.MainService.getEvents(4, 0).then(response => this.events = response.data );
     }
 
     openItem(event) : void{
