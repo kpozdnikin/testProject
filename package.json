@@ -20,7 +20,7 @@
     "@types/angular-mocks": "~1.5.5",
     "@types/angular-route": "1.*",
     "@types/angular-ui-router": "*",
-    "@types/angular-ui-bootstrap":"*",
+    "@types/angular-ui-bootstrap": "*",
     "@types/bootstrap": "~3.3.32",
     "@types/jasmine": "~2.5.37",
     "@types/jwt-decode": "~1.4.28",
@@ -29,7 +29,7 @@
     "@types/uglify-js": "~2.6.28",
     "angular": "1.5.*",
     "angular-ui-router": "*",
-    "angular-ui-bootstrap":"*",
+    "angular-ui-bootstrap": "*",
     "body-parser": "^1.15.1",
     "bootstrap": "^3.3.7",
     "browser-sync": "^2.18.8",
@@ -60,6 +60,8 @@
     "tslint-loader": "~2.1.5"
   },
   "devDependencies": {
+    "tslint": "^3.15.1",
+    "typescript": "^2.2.1",
     "typings": "*",
     "webpack": "^2.2.1"
   }

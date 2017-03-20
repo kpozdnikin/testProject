@@ -1,4 +1,3 @@
-/*
 {
   "rules": {
     "align": [false,
@@ -95,4 +94,4 @@
       "check-type"
     ]
   }
-}*/
+}

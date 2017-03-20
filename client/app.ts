@@ -12,7 +12,7 @@ const app = angular
     .module('app', ['ui.router', 'ui.bootstrap', HomeModule, EventsModule, NewsModule])
     .component('main', AppComponent)
     .directive('scrolly', scrolly)
-    .config(($stateProvider: angular.ui.IStateProvider, $urlRouterProvider: angular.ui.IUrlRouterProvider) => {
+    .config(($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider) => {
         $stateProvider
             .state('main', {
                 url: '',
