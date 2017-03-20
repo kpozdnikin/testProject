@@ -4,7 +4,7 @@ import { ModalController } from '../modal/modal.controller'
 
 export class NewsController {
 
-    static $inject: ['$scope', '$uibModal', 'MainService'];
+    static $inject: ['MainService', '$uibModal'];
     news: NewsItem[];
 
     constructor(private MainService: MainService, private $uibModal: ng.ui.bootstrap.IModalService) {

@@ -4,7 +4,7 @@ import { ModalController } from '../modal/modal.controller'
 
 export class EventsController {
 
-    static $inject: ['$scope', '$uibModal', 'MainService'];
+    static $inject: ['MainService', '$uibModal'];
     events: Event[];
 
     constructor(private MainService: MainService, private $uibModal: ng.ui.bootstrap.IModalService) {
